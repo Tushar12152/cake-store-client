@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { imageUpload } from "../Api/UploadImage";
+import useAuth from "../Provider/Hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Register = () => {
 
+    const {createUser,logout}=useAuth()
+    const navigate=useNavigate()
 
 const handleSubmit=async e=>{
     e.preventDefault()
@@ -14,6 +18,22 @@ const handleSubmit=async e=>{
     const image=img?.data?.display_url;
     const password=form.password.value;
     console.log(email,password,name,image);
+
+    createUser(email,password)
+    .then((res)=>{
+        //   console.log(res);
+        if(res.user){
+          
+            logout()
+            .then(()=>{
+                 navigate('/login')
+                 toast.success('Your Registration Compleate')
+            })
+        }
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
 }
 
 
