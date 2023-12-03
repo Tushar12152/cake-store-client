@@ -1,6 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../Provider/Hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
+
+    const {login}=useAuth()
+    const navigate=useNavigate()
 
 
 const handleSubmit=e=>{
@@ -9,6 +14,17 @@ const handleSubmit=e=>{
     const email=form.email.value;
     const password=form.password.value;
     console.log(email,password);
+
+    login(email,password)
+    .then(res=>{
+         if(res.user){
+             toast.success('logged in')
+             navigate('/')
+         }
+    })
+    .catch(err=>{
+        toast.error(err.message)
+    })
 }
 
 
