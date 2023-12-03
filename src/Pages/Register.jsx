@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
+import { imageUpload } from "../Api/UploadImage";
 
 const Register = () => {
 
 
-const handleSubmit=e=>{
+const handleSubmit=async e=>{
     e.preventDefault()
     const form=e.target;
     const email=form.email.value;
+    const name=form.name.value;
+    const photo=form.photo.files[0]
+    const img=await imageUpload(photo)
+    const image=img?.data?.display_url;
     const password=form.password.value;
-    console.log(email,password);
+    console.log(email,password,name,image);
 }
 
 
