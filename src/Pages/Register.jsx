@@ -1,7 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { imageUpload } from "../Api/UploadImage";
-import useAuth from "../Provider/Hooks/useAuth";
+
 import toast from "react-hot-toast";
+import useAuth from "../Hooks/useAuth";
 
 const Register = () => {
 

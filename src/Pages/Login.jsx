@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
-import useAuth from "../Provider/Hooks/useAuth";
+
 import toast from "react-hot-toast";
+import useAuth from "../Hooks/useAuth";
 
 const Login = () => {
 
@@ -13,7 +14,7 @@ const handleSubmit=e=>{
     const form=e.target;
     const email=form.email.value;
     const password=form.password.value;
-    console.log(email,password);
+    // console.log(email,password);
 
     login(email,password)
     .then(res=>{
