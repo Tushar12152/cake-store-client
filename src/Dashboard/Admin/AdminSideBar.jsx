@@ -17,9 +17,9 @@ const AdminSideBar = () => {
 
 
                             <li>
-                                <NavLink to="/dashboard/addmeal">
+                                <NavLink to="/dashboard/addcake">
                                     <FaUtensils></FaUtensils>
-                                    Add Meal</NavLink>
+                                    Add Cake</NavLink>
                             </li>
                             
                             <li>
