@@ -5,6 +5,7 @@ import Register from "../Pages/Register";
 import DashBoard from "../LayOuts/DashBoard";
 import ManageUser from "../Dashboard/Admin/ManageUser";
 import AddCake from "../Dashboard/Admin/AddCake";
+import AllCake from "../Dashboard/Admin/AllCake";
 
 const Router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const Router = createBrowserRouter([
                  {
                     path:'/dashboard/addcake',
                     element:<AddCake></AddCake>
+                 },
+                 {
+                    path:'/dashboard/allcake',
+                    element:<AllCake></AllCake>
                  }
         ]
 

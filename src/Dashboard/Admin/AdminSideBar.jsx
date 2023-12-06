@@ -23,9 +23,9 @@ const AdminSideBar = () => {
                             </li>
                             
                             <li>
-                                <NavLink to="/dashboard/allmeal">
+                                <NavLink to="/dashboard/allcake">
                                     <FaBook></FaBook>
-                                    All Meals</NavLink>
+                                    All Cakes</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/allreview">
