@@ -1,13 +1,40 @@
 import { AiOutlineMenu } from 'react-icons/ai'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '../Hooks/useAuth'
+import useAxiosSecure from '../AxiosHooks/useAxiosSecure'
+import { useQuery } from '@tanstack/react-query'
+import toast from 'react-hot-toast'
 
 
 
 const MenuDropdown = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { user } = useAuth()
+  const { user,logout} = useAuth()
+  const userMail=user?.email;
+  const axiosSecure=useAxiosSecure()
+  const navigate=useNavigate()
+
+  const { data:users=[]} = useQuery({
+    queryKey: ['user'],
+    queryFn: async() =>{
+      const res=await axiosSecure.get('/users')
+      return res.data
+ } })
+
+// console.log((users));
+
+const specificUser=users?.find(user=>user.email===userMail)
+//  console.log(specificUser);
+
+  const handleLogOut=()=>{
+    logout()
+    .then(()=>{
+       toast.success('logged out')
+       navigate('/login')
+    })
+  }
+
 
   return (
     <div className='relative'>
@@ -27,7 +54,7 @@ const MenuDropdown = () => {
             <img
               className='rounded-full'
               referrerPolicy='no-referrer'
-              src='avatar'
+              src={specificUser?.image}
               alt='profile'
               height='30'
               width='30'
@@ -57,13 +84,17 @@ const MenuDropdown = () => {
         </div>
         :
         <div className='flex flex-col cursor-pointer'>
+
+         <h1 className='text-center p-2 bg-pink-400 font-bold'>{specificUser?.name}</h1>
+
           <Link
-            to='/login'
+            to='/dashboard'
             className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
           >
             Dashboard
           </Link>
           <Link
+            onClick={handleLogOut}
             to='/register'
             className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
           >

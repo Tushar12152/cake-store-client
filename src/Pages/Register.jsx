@@ -3,12 +3,13 @@ import { imageUpload } from "../Api/UploadImage";
 
 import toast from "react-hot-toast";
 import useAuth from "../Hooks/useAuth";
+import useAxiosPublic from "../AxiosHooks/useAxiosPublic";
 
 const Register = () => {
-
+  const axiosPublic=useAxiosPublic()
     const {createUser,logout}=useAuth()
     const navigate=useNavigate()
-
+    
 const handleSubmit=async e=>{
     e.preventDefault()
     const form=e.target;
@@ -18,18 +19,34 @@ const handleSubmit=async e=>{
     const img=await imageUpload(photo)
     const image=img?.data?.display_url;
     const password=form.password.value;
-    console.log(email,password,name,image);
+    // console.log(email,password,name,image);
+
+    
+
+   
+
 
     createUser(email,password)
     .then((res)=>{
         //   console.log(res);
-        if(res.user){
-          
+
+        if(res?.user){
+
+          const userInfo={
+            name,
+            image,
+            email: res?.user?.email,
+           role:'user'
+       }
+          axiosPublic.post('/users',userInfo)
+          .then(()=>{
             logout()
             .then(()=>{
                  navigate('/login')
                  toast.success('Your Registration Compleate')
             })
+          })
+            
         }
     })
     .catch((err)=>{
