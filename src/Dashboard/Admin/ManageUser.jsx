@@ -3,7 +3,8 @@ import useAxiosSecure from "../../AxiosHooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { useEffect, useState } from "react";
-// import swal from "sweetalert";
+import swal from "sweetalert";
+import Title from "../../shared/Title";
 
 const ManageUser = () => {
     const [toggle,setToggle]=useState(true)
@@ -53,6 +54,8 @@ const ManageUser = () => {
 //    console.log(alluser);
     return (
         <div>
+
+            <Title heading={'Manage User'}></Title>
               <TableContainer>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>

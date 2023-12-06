@@ -4,6 +4,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import DashBoard from "../LayOuts/DashBoard";
 import ManageUser from "../Dashboard/Admin/ManageUser";
+import AddCake from "../Dashboard/Admin/AddCake";
 
 const Router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const Router = createBrowserRouter([
                  {
                     path:'/dashboard/manageUsers',
                     element:<ManageUser/>
+                 },
+                 {
+                    path:'/dashboard/addcake',
+                    element:<AddCake></AddCake>
                  }
         ]
 
