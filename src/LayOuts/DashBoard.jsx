@@ -1,9 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import useAxiosSecure from "../AxiosHooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../Hooks/useAuth";
 import AdminSideBar from "../Dashboard/Admin/AdminSideBar";
 import UserSideBar from "../Dashboard/User/UserSideBar";
+import { FaHome } from "react-icons/fa";
 
 const DashBoard = () => {
     const {user}=useAuth()
@@ -32,6 +33,17 @@ const DashBoard = () => {
                  {
                     Admin?<AdminSideBar/>:<UserSideBar/>
                  }
+
+
+
+                 <div className="mt-20  menu">
+                    <hr/>
+                 <li >
+                                <NavLink to="/">
+                                <FaHome/>
+                                    Home</NavLink>
+                            </li>
+                 </div>
              </div>
              <div className="col-span-7 md:col-span-9 p-10 min-h-screen">
                 <Outlet></Outlet>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Container = ({children}) => {
     return (
-        <div className="w-[90%] mx-auto">
+        <div className="w-[95%] mx-auto">
              {children}
         </div>
     );

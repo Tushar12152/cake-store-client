@@ -4,7 +4,7 @@ import MenuDropdown from "./MenuDropDown";
 
 const Nav = () => {
 
-    const nav=<div className="flex gap-6 ">
+    const nav=<div className="flex gap-6 flex-col lg:flex-row lg:text-white text-black">
           <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-pink-400 underline" : "" }>Home</NavLink>
 
 
@@ -23,7 +23,8 @@ const Nav = () => {
 
     return (
         <Container>
-             <div className="navbar bg-base-100">
+             <div className="navbar max-w-[95%]  text-white fixed z-10 bg-opacity-30 bg-black  ">
+             {/*  */}
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

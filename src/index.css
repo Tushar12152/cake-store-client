@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;600;700&display=swap');
 
 *{
-    font-family: 'Pacifico', cursive;
+    font-family: 'Saira Semi Condensed', sans-serif;
 }
 
 @tailwind base;

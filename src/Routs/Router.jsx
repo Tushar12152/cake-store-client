@@ -6,6 +6,8 @@ import DashBoard from "../LayOuts/DashBoard";
 import ManageUser from "../Dashboard/Admin/ManageUser";
 import AddCake from "../Dashboard/Admin/AddCake";
 import AllCake from "../Dashboard/Admin/AllCake";
+import Home from "../Pages/Home";
+import CakeDetail from "../Components/CakeDetail";
 
 const Router = createBrowserRouter([
     {
@@ -13,7 +15,13 @@ const Router = createBrowserRouter([
         element:<Layout></Layout>,
         children:[
             {
-
+                  path:'/',
+                  element:<Home></Home>
+            },
+            {
+                path:'/cake-detail/:id',
+                element:<CakeDetail></CakeDetail>,
+                loader:({params})=>fetch(`http://localhost:5000/cakes/${params.id}`)
             }
         ]
 

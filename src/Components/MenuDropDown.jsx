@@ -37,7 +37,7 @@ const specificUser=users?.find(user=>user.email===userMail)
 
 
   return (
-    <div className='relative'>
+    <div className='relative  '>
       <div className='flex flex-row items-center gap-3'>
         {/* Become A Host btn */}
         <div className='hidden md:block'>
@@ -66,7 +66,7 @@ const specificUser=users?.find(user=>user.email===userMail)
         <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm'>
          {
           !user?
-          <div className='flex flex-col cursor-pointer'>
+          <div className='flex flex-col cursor-pointer bg-opacity-30 bg-black'>
            
 
           <Link
@@ -83,7 +83,7 @@ const specificUser=users?.find(user=>user.email===userMail)
           </Link>
         </div>
         :
-        <div className='flex flex-col cursor-pointer'>
+        <div className='flex flex-col cursor-pointer text-black '>
 
          <h1 className='text-center p-2 bg-pink-400 font-bold'>{specificUser?.name}</h1>
 

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { FaBook,  FaHandsHelping,   FaUtensils } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
-import { MdManageAccounts, MdPreview, MdUpcoming } from "react-icons/md";
+import { MdManageAccounts} from "react-icons/md";
 const AdminSideBar = () => {
     return (
         <div className="menu p-4">
@@ -27,21 +27,13 @@ const AdminSideBar = () => {
                                     <FaBook></FaBook>
                                     All Cakes</NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/dashboard/allreview">
-                                <MdPreview />
-                                    All Review</NavLink>
-                            </li>
+                           
                             <li>
                                 <NavLink to="/dashboard/servemeal">
                                 <FaHandsHelping />
-                                    Serve Meal</NavLink>
+                                    All Orders</NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/dashboard/upcomingmeal">
-                                <MdUpcoming />
-                                    Upcoming Meal</NavLink>
-                            </li>
+                           
         </div>
     );
 };
