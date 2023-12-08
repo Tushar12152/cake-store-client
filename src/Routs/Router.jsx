@@ -8,6 +8,7 @@ import AddCake from "../Dashboard/Admin/AddCake";
 import AllCake from "../Dashboard/Admin/AllCake";
 import Home from "../Pages/Home";
 import CakeDetail from "../Components/CakeDetail";
+import MyOrders from "../Dashboard/User/MyOrders";
 
 const Router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const Router = createBrowserRouter([
                  {
                     path:'/dashboard/allcake',
                     element:<AllCake></AllCake>
+                 },
+                 {
+                    path:'/dashboard/orders',
+                    element:<MyOrders></MyOrders>
                  }
         ]
 

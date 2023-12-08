@@ -10,9 +10,9 @@ const UserSideBar = () => {
                                 <CgProfile />  User Profile</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/manageUsers">
+                                <NavLink to="/dashboard/orders">
                                 <MdManageAccounts />
-                                    Orders</NavLink>
+                                   My Orders</NavLink>
                             </li>
    
         </div>
