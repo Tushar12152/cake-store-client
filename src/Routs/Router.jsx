@@ -9,6 +9,7 @@ import AllCake from "../Dashboard/Admin/AllCake";
 import Home from "../Pages/Home";
 import CakeDetail from "../Components/CakeDetail";
 import MyOrders from "../Dashboard/User/MyOrders";
+import AllCakes from "../Pages/AllCakes";
 
 const Router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const Router = createBrowserRouter([
                 path:'/cake-detail/:id',
                 element:<CakeDetail></CakeDetail>,
                 loader:({params})=>fetch(`http://localhost:5000/cakes/${params.id}`)
+            },
+            {
+             path:'/all-cakes'   ,
+             element:<AllCakes></AllCakes>
             }
         ]
 
