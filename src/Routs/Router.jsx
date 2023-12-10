@@ -10,6 +10,7 @@ import Home from "../Pages/Home";
 import CakeDetail from "../Components/CakeDetail";
 import MyOrders from "../Dashboard/User/MyOrders";
 import AllCakes from "../Pages/AllCakes";
+import AllOrders from "../Dashboard/Admin/AllOrders";
 
 const Router = createBrowserRouter([
     {
@@ -60,6 +61,10 @@ const Router = createBrowserRouter([
                  {
                     path:'/dashboard/orders',
                     element:<MyOrders></MyOrders>
+                 },
+                 {
+                    path:"/dashboard/allorders",
+                    element:<AllOrders></AllOrders>
                  }
         ]
 
