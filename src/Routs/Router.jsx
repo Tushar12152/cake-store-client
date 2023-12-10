@@ -24,8 +24,9 @@ const Router = createBrowserRouter([
             {
                 path:'/cake-detail/:id',
                 element:<CakeDetail></CakeDetail>,
-                loader:({params})=>fetch(`http://localhost:5000/cakes/${params.id}`)
+                loader:({params})=>fetch(`https://cake-house-server.vercel.app/cakes/${params.id}`)
             },
+            
             {
              path:'/all-cakes'   ,
              element:<AllCakes></AllCakes>
