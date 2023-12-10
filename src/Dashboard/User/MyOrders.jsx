@@ -109,7 +109,7 @@ const MyOrders = () => {
 
               <TableCell align="right" scope="row">
                 
-                 <button onClick={()=>handleDelete(row?._id)}  className="btn bg-pink-400 text-white">Cancel</button>
+                 <button onClick={()=>handleDelete(row?._id)}  className="btn  bg-pink-400 text-white">Cancel</button>
                 
               </TableCell>
 
