@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import toast from "react-hot-toast";
 import useAuth from "../Hooks/useAuth";
@@ -7,7 +7,7 @@ const Login = () => {
 
     const {login}=useAuth()
     const navigate=useNavigate()
-
+    const location=useLocation()
 
 const handleSubmit=e=>{
     e.preventDefault()
@@ -20,7 +20,7 @@ const handleSubmit=e=>{
     .then(res=>{
          if(res.user){
              toast.success('logged in')
-             navigate('/')
+             navigate(location?.state ? location.state:"/")
          }
     })
     .catch(err=>{
