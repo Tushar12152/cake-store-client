@@ -11,6 +11,8 @@ import CakeDetail from "../Components/CakeDetail";
 import MyOrders from "../Dashboard/User/MyOrders";
 import AllCakes from "../Pages/AllCakes";
 import AllOrders from "../Dashboard/Admin/AllOrders";
+import AdminRouts from "./AdminRoute";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
     {
@@ -23,7 +25,7 @@ const Router = createBrowserRouter([
             },
             {
                 path:'/cake-detail/:id',
-                element:<CakeDetail></CakeDetail>,
+                element:<PrivateRoute><CakeDetail></CakeDetail></PrivateRoute>,
                 loader:({params})=>fetch(`https://cake-house-server.vercel.app/cakes/${params.id}`)
             },
             
@@ -49,23 +51,23 @@ const Router = createBrowserRouter([
         children:[
                  {
                     path:'/dashboard/manageUsers',
-                    element:<ManageUser/>
+                    element:<AdminRouts><ManageUser/></AdminRouts>
                  },
                  {
                     path:'/dashboard/addcake',
-                    element:<AddCake></AddCake>
+                    element:<AdminRouts><AddCake></AddCake></AdminRouts>
                  },
                  {
                     path:'/dashboard/allcake',
-                    element:<AllCake></AllCake>
+                    element:<AdminRouts><AllCake></AllCake></AdminRouts>
                  },
                  {
                     path:'/dashboard/orders',
-                    element:<MyOrders></MyOrders>
+                    element:<PrivateRoute><MyOrders></MyOrders></PrivateRoute>
                  },
                  {
                     path:"/dashboard/allorders",
-                    element:<AllOrders></AllOrders>
+                    element:<AdminRouts><AllOrders></AllOrders></AdminRouts>
                  }
         ]
 

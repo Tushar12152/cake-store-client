@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import useAxiosSecure from "../Hooks/useAxiosSecure";
-import useAuth from "../Hooks/useAuth";
+
+
 import { PropTypes } from 'prop-types';
 import { Navigate } from "react-router-dom";
+import useAxiosSecure from "../AxiosHooks/useAxiosSecure";
+import useAuth from "../Hooks/useAuth";
 
 
 const AdminRouts = ({children}) => {
@@ -44,7 +46,7 @@ const AdminRouts = ({children}) => {
           );
     }
 
-    if(loggedInUser?.Role==='admin'){
+    if(loggedInUser?.role==='admin'){
         console.log('yes admin');
         return  children
     } else{
