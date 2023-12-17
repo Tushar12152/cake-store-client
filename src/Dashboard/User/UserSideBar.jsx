@@ -6,7 +6,7 @@ const UserSideBar = () => {
     return (
         <div className="menu p-4">
             <li>
-                                <NavLink to="/dashboard/adminProfile">
+                                <NavLink to="/dashboard/userProfile">
                                 <CgProfile />  User Profile</NavLink>
                             </li>
                             <li>
