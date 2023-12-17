@@ -3,6 +3,7 @@ import Container from "../shared/Container";
 import useAuth from "../Hooks/useAuth";
 import useAxiosSecure from './../AxiosHooks/useAxiosSecure';
 import swal from "sweetalert";
+import { Helmet } from "react-helmet-async";
 
 const CakeDetail = () => {
     const cake=useLoaderData()
@@ -34,6 +35,11 @@ const handleOrder=()=>{
 
     return (
         <Container>
+
+<Helmet>
+     <title>Nazme,s shop || Details</title>
+</Helmet>
+
             <div className="hero min-h-screen" style={{backgroundImage: `url(${cake?.imageUrl})`}}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">

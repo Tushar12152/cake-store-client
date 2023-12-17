@@ -5,6 +5,7 @@ import useAuth from "../Hooks/useAuth";
 import AdminSideBar from "../Dashboard/Admin/AdminSideBar";
 import UserSideBar from "../Dashboard/User/UserSideBar";
 import { FaHome } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const DashBoard = () => {
     const {user}=useAuth()
@@ -29,6 +30,10 @@ const DashBoard = () => {
 
     return (
         <div className="grid grid-cols-12 h-full ">
+             
+<Helmet>
+     <title>Nazme,s shop || DashBoard</title>
+</Helmet>
              <div className="col-span-5 md:col-span-3 min-h-screen text-center text-white bg-pink-400 ">
                  {
                     Admin?<AdminSideBar/>:<UserSideBar/>

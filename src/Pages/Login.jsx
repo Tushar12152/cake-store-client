@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import toast from "react-hot-toast";
 import useAuth from "../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 
@@ -31,6 +32,11 @@ const handleSubmit=e=>{
 
     return (
         <div>
+          
+<Helmet
+>
+     <title>Nazme,s shop || Login</title>
+</Helmet>
              <div className="hero min-h-screen shadow-2xl bg-base-200 ">
   <div className="hero-content flex-col w-[70%] justify-between items-center lg:flex-row">
     <div className=" relative ">

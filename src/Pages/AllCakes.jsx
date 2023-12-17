@@ -3,6 +3,7 @@ import useAxiosSecure from "../AxiosHooks/useAxiosSecure";
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Container from "../shared/Container";
+import { Helmet } from "react-helmet-async";
 
 const AllCakes = () => {
 
@@ -21,6 +22,10 @@ const AllCakes = () => {
 
     return (
         <Container>
+          
+<Helmet>
+     <title>Nazme,s shop || All Cakes</title>
+</Helmet>
              <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
               {
                 cakes.map(cake=><Card key={cake._id} sx={{ maxWidth: 415 }}>

@@ -4,6 +4,7 @@ import { imageUpload } from "../Api/UploadImage";
 import toast from "react-hot-toast";
 import useAuth from "../Hooks/useAuth";
 import useAxiosPublic from "../AxiosHooks/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const axiosPublic=useAxiosPublic()
@@ -57,6 +58,10 @@ const handleSubmit=async e=>{
 
     return (
         <div>
+          
+<Helmet>
+     <title>Nazme,s shop || Register</title>
+</Helmet>
              <div className="hero min-h-screen shadow-2xl bg-base-200 ">
   <div className="hero-content flex-col w-[70%] justify-between items-center lg:flex-row">
     <div className=" relative ">
