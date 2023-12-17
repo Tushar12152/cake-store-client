@@ -13,6 +13,7 @@ import AllCakes from "../Pages/AllCakes";
 import AllOrders from "../Dashboard/Admin/AllOrders";
 import AdminRouts from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
+import AdminProfile from "../Dashboard/Admin/AdminProfile";
 
 const Router = createBrowserRouter([
     {
@@ -68,6 +69,12 @@ const Router = createBrowserRouter([
                  {
                     path:"/dashboard/allorders",
                     element:<AdminRouts><AllOrders></AllOrders></AdminRouts>
+                 },
+                 {
+                    path:'/dashboard/adminProfile',
+                    element:<AdminRouts>
+                         <AdminProfile/>
+                    </AdminRouts>
                  }
         ]
 
